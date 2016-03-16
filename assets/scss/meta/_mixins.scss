@@ -1,0 +1,37 @@
+// initial variables set-up
+
+$base-margin: 15;
+$base-line-height: 20;
+
+// mixin
+
+@mixin ritm($count, $top: true, $bottom: true, $overflow: false) {
+
+  @if $top{
+    margin-top: 0px + $base-margin;
+  }
+
+  @if $bottom {
+    margin-bottom: 0px + $base-margin;
+  }
+
+  @if $overflow{
+    overflow: hidden;
+  }
+
+  height: $count * $base-line-height - 1px;
+  line-height: 0px + $base-line-height;
+
+  @media(max-width: 992px){
+    height: auto;
+    overflow: visible;
+  }
+}
+
+.www {
+  // @include ritm(4, true, true, false);
+  // @include ritm(4, false, false, true);
+  // @include ritm(4, true, true, false);
+  // @include ritm(4, true, true, false);
+  // @include ritm(4, true, true, false);
+}

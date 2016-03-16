@@ -1,0 +1,128 @@
+.article-share{
+  border-top: 1px $color-gray solid;
+  padding: 10px 0;
+  &__label{
+    float: left;
+    color: #6d747e;
+    margin-top: 5px;
+    @media(max-width:768px){
+      float: none;
+      text-align: center;
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+  &__list{
+    float: right;
+    @media(max-width:768px){
+      float: none;
+      text-align: center;
+    }
+  }
+  &__item{
+    margin-right: 10px;
+    @media(max-width:768px){
+      display: inline-block;
+      float: none !important;
+      margin-bottom: 10px;
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  &__link{
+    display: block;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    color: white(1);
+    @media(max-width:768px){
+      width: 50px;
+      height: 50px;
+    }
+    &:hover{
+      color: white(1);
+    }
+    &.vk{
+      background: $color-vk;
+      &:hover{
+        background: darken($color-vk, 5%);
+      }
+    }
+    &.odnoklassniki{
+      background: $color-ok;
+      &:hover{
+        background: darken($color-ok, 5%);
+      }
+    }
+    &.twitter{
+      background: $color-twitter;
+      &:hover{
+        background: darken($color-twitter, 5%);
+      }
+    }
+    &.gplus{
+      background: $color-google;
+      &:hover{
+        background: darken($color-google, 5%);
+      }
+    }
+    &.facebook{
+      background: $color-facebook;
+      &:hover{
+        background: darken($color-facebook, 5%);
+      }
+    }
+    &.pinterest{
+      background: $color-pinterest;
+      &:hover{
+        background: darken($color-pinterest, 5%);
+      }
+    }
+    &.at{
+      // background: #2164ad;
+      &:hover{
+        // background: darken(#2164ad, 5%);
+      }
+    }
+    &.blogger{
+      background: $color-blogger;
+      &:hover{
+        background: darken($color-blogger, 5%);
+      }
+    }
+    &.tumblr-1{
+      background: $color-tumblr;
+      &:hover{
+        background: darken($color-tumblr, 5%);
+      }
+    }
+    &.evernote{
+      background: $color-evernote;
+      &:hover{
+        background: darken($color-evernote, 5%);
+      }
+    }
+    &.linkedin{
+      background: $color-linkedin;
+      &:hover{
+        background: darken($color-linkedin, 5%);
+      }
+    }
+    &.reddit{
+      background: $color-reddit;
+      &:hover{
+        background: darken($color-reddit, 5%);
+      }
+    }
+  }
+  &__ico{
+    &:before{
+      line-height: 30px;
+      @media(max-width:768px){
+        line-height: 50px;
+        font-size: 16px;
+      }
+    }
+  }
+}

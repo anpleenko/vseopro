@@ -1,0 +1,29 @@
+.article-footer{
+  border-top: 1px $color-gray solid;
+  // margin-top: 20px;
+  padding-top: 10px;
+  &__item{
+    margin-right: 10px;
+    @media(max-width: 992px){
+      display: block;
+    }
+    &:last-child{
+      margin-right: 0px;
+    }
+  }
+  &__link{
+    margin-right: 5px;
+    font-size: 13px;
+    @media(max-width: 992px){
+      font-size: 15px;
+    }
+  }
+  &__icon{
+    color: darken($color-gray, 30%);
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  &__text{
+    color: darken($color-gray, 30%);
+  }
+}

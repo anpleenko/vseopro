@@ -1,0 +1,196 @@
+.navbar-vseopro{
+  background: $color-black;
+  border: none;
+  .dropdown-menu{
+    padding: 0;
+    margin: 0;
+    border: none;
+    display: initial !important;
+    background: transparent !important;
+    @extend %hover-transform-before;
+  }
+  .dropdown-toggle{
+    border-top: 2px transparent solid;
+    color: white(1);
+    background-color: $color-black !important;
+    padding: 14px 18px 13px 15px !important;
+    &:only-hover{
+      border-color: $color-orange !important;
+      color: $color-orange;
+      background-color: $color-black !important;
+    }
+  }
+  .open{
+    .dropdown-toggle{
+      border-color: $color-orange !important;
+      color: $color-orange !important;
+    }
+    .dropdown-menu{
+      display: initial !important;
+      @extend %hover-transform-after;
+    }
+  }
+}
+
+nav.main{
+  background: $color-black;
+}
+
+.main-nav{
+  > ul {
+    > li{
+      > a {
+        position: relative;
+        &.has-menu{
+          &:after, &:before{
+            position: absolute;
+            content:"";
+            background: white(1);
+            height: 2px;
+            width: 7px;
+            top:50%;
+            // margin-top: -3px;
+            right: 8px;
+            transition: all 0.17s ease-in-out;
+          }
+          &:before{
+            transform: rotate(45deg);
+          }
+          &:after{
+            transform: rotate(-45deg);
+            right: 4px;
+          }
+        }
+      }
+      &:only-hover{
+        > a{
+          color: $color-orange;
+          border-color: $color-orange;
+          &.has-menu{
+            &:after, &:before{
+              transition: all 0.17s ease-in-out;
+              background: $color-orange;
+            }
+          }
+        }
+      }
+      > ul {
+        a{
+          // background: rgba(25, 38, 55, .8);
+          padding: 14px 25px 14px 15px;
+          color: white(1);
+          border-bottom: 1px solid $color-main;
+        }
+      }
+      > ul{
+        > li{
+          &:only-hover{
+            > a{
+              color: $color-orange;
+              &.has-menu{
+                &::after, &::before{
+                  transition: all 0.17s ease-in-out;
+                  background: $color-orange;
+                }
+              }
+            }
+          }
+          > a{
+            &.has-menu{
+              position: relative;
+              &::after, &::before{
+                position: absolute;
+                content:"";
+                background: white(1);
+                height: 2px;
+                width: 7px;
+                top:50%;
+                right: 10px;
+                margin-top: -2px;
+                transition: all 0.17s ease-in-out;
+              }
+              &::before{
+                transform: rotate(45deg);
+              }
+              &::after{
+                transform: rotate(-45deg);
+                right: 10px;
+                margin-top: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    // background: #1bc2a2;
+    li{
+      position: relative;
+      float: left;
+      z-index: 1001;
+      // background: #1bc2a2;
+      &:last-child{
+        a{
+          border-bottom: none;
+        }
+      }
+      a {
+        border-top: 2px solid transparent;
+        font-size: 15px;
+        padding: 14px 18px 13px 15px;
+        color: white(1);
+        position: relative;
+
+        display: block;
+        // padding: 1em;
+        text-decoration: none;
+        white-space: nowrap;
+        color: white(1);
+        &:only-hover {
+          color: $color-orange;
+        }
+      }
+    }
+  }
+  li {
+    ul {
+      box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .3);
+      background: rgba($color-black, .8);
+      position: absolute;
+      z-index: 1;
+      @extend %hover-transform-before;
+    }
+  }
+  li:hover > ul {
+    @extend %hover-transform-after;
+  }
+  li:hover li { float: none; }
+  li:hover a {}
+  ul ul ul {
+    left: 100%;
+    top: 0;
+  }
+}
+
+.affix-wrap{
+  height: 50px;
+  background: $color-black;
+}
+
+.nav-afix{
+  &.affix{
+    height: 50px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    @media(max-width: 992px){
+      position: static;
+      // position: static !important;
+    }
+  }
+}

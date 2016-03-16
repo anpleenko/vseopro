@@ -1,0 +1,54 @@
+.affix-wrap
+  .yamm.navbar.navbar-vseopro.nav-afix
+    .container
+      .hidden-md.hidden-lg.pull-left(block="open-menu")
+        button(type="button" data-show="left-menu" elem="button").no-outline.no-select.pull-left
+          span.dib(elem="dib")
+            -for(var i = 0; i < 3; i++)
+              span(elem="span")
+          span(elem="right-label").text-white Меню
+
+      .hidden-md.hidden-lg.pull-right(block="open-menu")
+        button(type="button" data-show="right-menu" elem="button").no-outline.no-select.pull-right
+          span(elem="left-label").text-white Вход
+          span.dib(elem="dib")
+            -for(var i = 0; i < 3; i++)
+              span(elem="span")
+
+      // основное меню видно везде кроме мобильных устройств
+      .main-nav.visible-md.visible-lg
+        ul.clearfix.pull-left
+          each key in navMenu
+            if !key.submenu
+              li
+                a(href="#{key.url}") #{key.text}
+            else
+              li
+                a(href="#").has-menu #{key.text}
+                ul
+                  each val in key.submenu
+                    if !val.submenu
+                      li
+                        a(href="#") #{val.text}
+                    else
+                      li
+                        a(href="#").has-menu #{val.text}
+                        ul
+                          each link in val.submenu
+                            li
+                              a(href="#") #{link.text}
+
+      ul.nav.navbar-nav.pull-right.visible-md.visible-lg
+        li.dropdown.yamm-fw
+          a.dropdown-toggle(href='#', data-toggle='dropdown')
+            span.icon-search
+          ul.dropdown-menu
+            li
+              include ../form-search/_form-search
+
+        li.dropdown.yamm-fw.visible-md.visible-lg
+          a.dropdown-toggle(href='#', data-toggle='dropdown') <span class="icon-login"></span> Вход
+          ul.dropdown-menu
+            li
+              include ../form-login/_form-login
+              include ../profile-info/_profile-info

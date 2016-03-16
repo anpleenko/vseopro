@@ -1,0 +1,20 @@
+.container.hot-news
+  .row
+    .col-sm-3.col-md-3.col-lg-2
+      a(href="#").hot-news__button.btn.btn-red.fluid Горячие новости
+    .col-sm-9.col-md-9.col-lg-10
+      #hot-news-slider.carousel.slide(data-ride='carousel')
+
+        .carousel-inner(role='listbox')
+          .item.active
+            .hot-news__render.pr
+              a(href="#").hot-news__text.text-overflow.transform-middle Горячие новости дня затоплен служба Яндекс. Рефераты предназначена  Полнофункциональная Система Управления пользо...
+          .item
+            .hot-news__render.pr
+              a(href="#").hot-news__text.text-overflow.transform-middle Горячие новости дня затоплен служба Яндекс. Рефераты предназначена  Полнофункциональная Система Управления пользо...
+
+        a.btn.hot-news__prev.no-outline(href='#hot-news-slider', role='button', data-slide='prev')
+          span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+        a.btn.hot-news__next.no-outline(href='#hot-news-slider', role='button', data-slide='next')
+          span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+

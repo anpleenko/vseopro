@@ -1,0 +1,34 @@
+footer.main.visible-lg.visible-md
+  include ../footer-subs/_footer-subs
+  include ../footer-social/_footer-social
+  include ../footer-last-user/_footer-last-user
+
+.footer-copyright.text-white
+  .container
+    .clearfix(block="site-working")
+      span.pull-left(elem="title") Сайт работает в
+      ul.menu-list.pull-left(elem="list")
+        li(elem="item"): span.icon-android(elem="icon")
+        li(elem="item"): span.icon-social-apple(elem="icon")
+        li(elem="item"): span.icon-windows(elem="icon")
+        //- li.pull-left: span.icon-ie.text-white.site-working__icon
+
+    ul.menu-list(block="copyright-text")
+      li(elem="item") Copyright 2015 г.
+      li(elem="item") «Vseopro.ru»
+      //- li.text-white.copyright-text__item Яндекс.метрика
+      //- li.text-white.copyright-text__item.text-uppercase Анализ сайта
+
+    ul.menu-list(block="footer-link")
+      li(elem="item"): a(href="#" elem="link") Карта сайта
+      li(elem="item"): a(href="#" elem="link") Обратная связь
+      li(elem="item"): a(href="#" elem="link") Правообладателям
+      li(elem="item"): a(href="#" elem="link") Заказ рекламы
+
+    ul.menu-list(block="footer-ico")
+      li(elem="item"): a(href="#" elem="link").vk: span.icon-vk
+      li(elem="item"): a(href="#" elem="link").odnoklassniki: span.icon-odnoklassniki
+      li(elem="item"): a(href="#" elem="link").twitter: span.icon-twitter
+      li(elem="item"): a(href="#" elem="link").google: span.icon-google-plus
+      li(elem="item"): a(href="#" elem="link").facebook: span.icon-facebook
+      li(elem="item"): a(href="#" elem="link").rss: span.icon-rss-alt

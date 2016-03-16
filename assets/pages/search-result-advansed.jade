@@ -1,0 +1,119 @@
+extends _layout
+
+block content
+  .container
+    include ../components/breadcrumb/_breadcrumb
+
+    div(block="white-block")
+      h4(elem="title") <span class="icon-search"></span> Поиск по сайту
+      div(block="search-result")
+        form(elem="form")
+
+          .row(elem="row")
+            .col-xs-6(elem="col")
+
+              span(elem="section-title").db.text-bold Поиск по содержимому
+              .row(elem="row")
+                .col-lg-4(elem="col")
+                  span.db(elem="section-label") Место жительства:
+                .col-lg-8(elem="col")
+                  input(elem="search-field" type="text" placeholder="Поиск").input.fluid
+              .row(elem="row")
+                .col-lg-6(elem="col")
+                  input(type="checkbox" id="exact_match_all_words" name="exact_match_all_words" elem="checkbox")
+                  label(for="exact_match_all_words" elem="label").no-select.cur Точное совпадение всех слов
+                .col-lg-6(elem="col")
+                  select.styler(elem="select")
+                    option Искать в статьях
+                    option Искать в статьях
+                    option Искать в статьях
+
+              span(elem="section-title").db.text-bold Найти статьи с
+              .row(elem="row")
+                .col-lg-6(elem="col")
+                  select.styler(elem="select")
+                    option Не менее, чем
+                    option Не менее, чем
+                    option Не менее, чем
+                .col-lg-2(elem="col")
+                  input(elem="search-field" type="text" placeholder="0").input.fluid
+                .col-lg-4(elem="col")
+                  span.db(elem="section-label") комментариями
+
+              span(elem="section-title").db.text-bold Временной период
+              .row(elem="row")
+                .col-xs-7(elem="col")
+                  select.styler(elem="select")
+                    option За все время
+                    option За все время
+                    option За все время
+                .col-xs-5(elem="col")
+                  select.styler(elem="select")
+                    option и новое
+                    option и новое
+                    option и новое
+
+              span(elem="section-title").db.text-bold Сортировка результатов поиска
+              .row(elem="row")
+                .col-xs-7(elem="col")
+                  select.styler(elem="select")
+                    option Дата статьи или комментария
+                    option Дата статьи или комментария
+                    option Дата статьи или комментария
+                .col-xs-5(elem="col")
+                  select.styler(elem="select")
+                    option По убыванию
+                    option По убыванию
+                    option По убыванию
+
+              span(elem="section-title").db.text-bold Показывать результат поиска как
+              .row(elem="row")
+                .col-xs-5(elem="col")
+                  span.db(elem="section-label").mt0 Результат поиска как:
+                .col-xs-7(elem="col")
+                  .row(elem="row")
+                    .col-xs-6(elem="col")
+                      input(type="checkbox" id="checkbox_article" name="checkbox_article" elem="checkbox")
+                      label(for="checkbox_article" elem="label").mt0.no-select.cur Статьи
+                    .col-xs-6(elem="col")
+                      input(type="checkbox" id="checkbox_title" name="checkbox_title" elem="checkbox")
+                      label(for="checkbox_title" elem="label").mt0.no-select.cur Заголовки
+
+            .col-xs-6(elem="col")
+
+              span(elem="section-title").db.text-bold Поиск по имени пользователя
+              .row(elem="row")
+                .col-xs-7(elem="col")
+                  input(elem="search-field" type="text" placeholder="Имя пользователя").input.fluid
+                .col-xs-5(elem="col")
+                  input(type="checkbox" id="exact_match" name="exact_match" elem="checkbox")
+                  label(for="exact_match" elem="label").no-select.cur Точное совпадение
+
+              span(elem="section-title").db.text-bold Поиск по разделам
+              select(multiple='', size='9').fluid
+                option -- Выберите --
+                optgroup(label='Группа 1')
+                  option Пункт 1.1
+                  option Пункт 1.2
+                  option Пункт 1.3
+                optgroup(label='Группа 2')
+                  option Пункт 2.1
+                  option(disabled='') Пункт 2.2
+                  option Пункт 2.3
+
+          button(type="submit" elem="button-submit").btn.btn-orange Начать поиск
+          button(type="reset" elem="button-reset").btn.btn-red Сбросить
+          button(type="reset" elem="button-revert").btn.btn-red Вернуть
+
+        -for(var i = 0; i < 3; i++)
+          div(elem="item")
+            h4(elem="title")
+              a(href="#").dark-blue-link Шаблон GhostAnime для DLE 10.3
+            include ../components/search-result-meta/_search-result-meta
+            .row(elem="row")
+              .col-md-3(elem="col")
+                a(href="#" elem="image-link").db
+                  img(src="img/img_demo_last-news.jpg", alt="search result image" elem="image").img-responsive
+              .col-md-9(elem="col")
+                p(elem="text") <strong>ClipBucket v.2.7.5</strong> Rus является наиболее динамично развивающимся скриптом, который впервые был запущен как Youtube Clone, но теперь особенности и усовершенствования делают его наиболее универсальным, надежным и масштабируемым скриптом с новейшими функциями социальных сетей. Clipbucket v.2.7.3 Rus сочетает в себе гибкость, быстроту и удобство для посетителей Gпортала.
+                a(href="#" elem="link").btn.btn-red Перейти к новости

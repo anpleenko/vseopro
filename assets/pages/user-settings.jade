@@ -1,0 +1,17 @@
+extends _layout
+
+block content
+  .container
+    include ../components/breadcrumb/_breadcrumb
+
+    div(block="white-block")
+      h4(elem="title") <span class="icon-user"></span> Пользователь: Admin
+
+    div(block="white-block")
+      h4(elem="title") <span class="icon-pencil"></span> Редактирование профиля
+
+    div(block="white-block")
+      h4(elem="title") <span class="icon-lightbulb-o"></span> Информация
+
+    div(block="white-block")
+      h4(elem="title") <span class="icon-paper-plane-empty"></span> Новости ожидающие публикации

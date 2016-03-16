@@ -1,0 +1,29 @@
+.news-metadata{
+  margin-top: 0px + $base-margin;
+  margin-bottom: 0px + $base-margin;
+  @media(max-width: 992px){
+    text-align: center;
+  }
+  &__text{
+    // color: $color-orange;
+    font-size: 12px;
+    line-height: 0px + $base-line-height;
+  }
+  &__ico{
+    font-size: 20px;
+    color: darken($color-gray, 30%);
+    line-height: 0px + $base-line-height;
+    // margin-right: 5px;
+    // margin-top: -1px;
+    // display: inline-block;
+    // vertical-align: middle;
+  }
+  &__col{
+    @media(max-width: 992px){
+      width: auto;
+      float: none;
+      display: inline-block;
+      margin: 0 10px;
+    }
+  }
+}

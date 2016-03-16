@@ -1,0 +1,42 @@
+.search-result-meta{
+  border-bottom: 1px $color-gray solid;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  &__list{
+    margin-bottom: 0;
+    // margin-top: -5px;
+    @media(max-width:992px){
+      text-align: center;
+    }
+  }
+  &__item{
+    margin-bottom: 0;
+    margin-right: 20px;
+    &:lat-child{
+      margin-right: 0;
+    }
+  }
+  &__icon{
+    font-size: 19px;
+    color: darken($color-gray, 30%);
+    // display: inline-block;
+    // vertical-align: middle;
+  }
+  &__link{
+    font-size: 12px;
+    // display: inline-block;
+    // vertical-align: middle;
+    &_breadcrumbs{
+      margin-right: 5px;
+      &:last-child{
+        &:after{
+          content: ""
+        }
+      }
+      &:after{
+        content: " >";
+        color: $color-main;
+      }
+    }
+  }
+}

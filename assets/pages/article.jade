@@ -1,0 +1,56 @@
+extends _layout
+
+block content
+  .container
+    include ../components/breadcrumb/_breadcrumb
+
+    .row
+      .col-md-8
+        div(block="white-block")
+          h1(elem="title") ClipBucket v.2.7.5 Rus + All Plugins + All
+
+          include ../components/article-header/_article-header
+          include ../components/article-content/_article-content
+          include ../components/article-share/_article-share
+          include ../components/article-footer/_article-footer
+
+        //- include components/_click-block
+
+        include ../components/news-similar/_news-similar
+
+        div(block="white-block")
+          h4(elem="title") <span class="icon-comment-1"></span> Комментарии
+          div(block="comment-block")
+            -for(var i = 0; i < 5; i++)
+              div(elem="item")
+                include ../components/comment-meta/_comment-meta
+                span(elem="text") #{text[Math.floor(Math.random() * ((text.length-1) - 0 + 1)) + 0]}
+
+        a(href="#").btn.btn-orange.btn-getMoreComments.table-center Показать предыдущие комментарии
+
+        div(block="white-block")
+          h1(elem="title") <span class="icon-plus"></span> Добавить комментарий
+
+      .col-xs-4.visible-md.visible-lg
+
+        // Мы рекомендуем
+        include ../components/sidebar-editors-choice/_sidebar-editors-choice
+
+        // Популярные новости
+        include ../components/sidebar-popular-news/_sidebar-popular-news
+
+        // Голосование
+        include ../components/sidebar-vote/_sidebar-vote
+
+        //- Чат пользователей
+        //- include widgets/_sidebar-chat
+
+        //- Комментарии
+        //- include widgets/_sidebar-comments
+
+        //- Пользователи онлайн
+        //- include widgets/_user-online
+
+        //- Статистика сайта
+        //- include widgets/_site-statistic
+

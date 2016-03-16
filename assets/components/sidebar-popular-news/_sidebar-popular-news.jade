@@ -1,0 +1,18 @@
+div(block="white-block")
+  h5(elem="sidebar-title") <span class="icon-network"></span> Популярные новости
+  div(block="popular-news")
+    -for(var i = 0; i < 10; i++)
+      .media(elem="media")
+        .media-left(elem="media-left")
+          img(src="https://unsplash.it/75/?random" alt="popular news image" elem="image")
+        .media-right(elem="media-right")
+          a(href="#" elem="title").db #{text[Math.floor(Math.random() * ((text.length-1) - 0 + 1)) + 0]}
+          .row(elem="metadata")
+            .col-xs-6(elem="col")
+              a(href="#" elem="user").link.text-overflow
+                span.icon-user(elem="ico")
+                | #{users[Math.floor(Math.random() * ((users.length-1) - 0 + 1)) + 0]}
+            .col-xs-6(elem="col")
+              a(href="#" elem="time").link.text-overflow
+                span.icon-calendar(elem="ico")
+                | #{time[Math.floor(Math.random() * ((time.length - 1) - 0 + 1)) + 0]}
