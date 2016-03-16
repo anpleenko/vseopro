@@ -1,13 +1,26 @@
 language: node_js
+
 node_js:
   - 0.12
-before_install:
-  - npm install -g bower
-  - bower install
-  - npm install -g gulp
-  - npm install
+
+env:
+  global:
+    - GH_REF: github.com/vaeum/vseopro.git
+    - secure: PYWOXitnE9+LLUKy5GcW8zcYa/dvYl453GIUYE8SxJSobkTIaAywY8ZMA+McrtRaiGMIIa3aQ++KEdy8+yOcqqR3HTYZ0bjw05rmBrLyMbdkLe37pmqxSVqVqs8novwBpGh7TNST5L9MLFVhjzflbPS6+XDI3nnghsvQzX2DrLG+43ryieRV7LxLGpGXnrOeWUYdkq0oVQNqhhAoncyd+9riNcRWSqSjTA36vxIBEdxOnN2K8b4m27GrgZxcORitdontFhxBurYsBXPU8sjBVAYgASmyFavm3EBnV3zbbc6Fm4K+uLT29yY7CKNmVORcRbkBTL+cg7Aj3QLls819LlRZX7GIX6FxPrqmHcGnwMAi6Dz3lLzXS1PN2BV7+s2y7DSUAZjERt2tRLVhTVLXW2CbEWcIhP0HbHg3x42CIplAGporRKcO/zfBT1pysui1M05vqURR2eEcsdPVYslg6TWLBaek5p15e3g8swOqI6CxNboZ1+x2NwNs7rIF9o1hNal7cVHaZk/pRxxBP6SthM2O7PjPIUNaPKWFGO177NPd/Ve2JBVtsMY3F/0d714QUw6o5GG4AdT1GkSzPyIVhKXL4oQBwzK089Ry0a34WAWSF0N4zdoo3JSVGgUPiBewn1YtNJ+676PfJIULmHK2jqVrRK1Biyv0DpscS76myas=
+
 before_script:
-  - npm run build
+  - npm install -g bower
+  - npm install -g gulp
+  - bower install
+  - npm install
+
 script:
-  - gulp deploy
-sudo: false
+  - npm run build
+  - cd app
+  - git init
+  - git config user.name "Alexander Anpleenko"
+  - git config user.email "vaeum@yahoo.com"
+  - git add .
+  - git commit -m "Deploy to GitHub Pages"
+  - git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
+

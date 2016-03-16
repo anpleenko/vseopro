@@ -2,6 +2,7 @@
 
 import gulp           from 'gulp';
 import del            from 'del';
+import watch          from 'gulp-watch';
 import mainBowerFiles from 'main-bower-files';
 import gulpFilter     from 'gulp-filter';
 import runSequence    from 'run-sequence';
@@ -21,7 +22,6 @@ import bulkSass       from 'gulp-sass-glob-import';
 import babel          from 'gulp-babel';
 import uglify         from 'gulp-uglify';
 import imagemin       from 'gulp-imagemin';
-import ftp            from 'vinyl-ftp';
 import browserSync    from 'browser-sync';
 
 let postCSSFocus = function (css) {
@@ -103,7 +103,7 @@ gulp.task('jade', () => {
         .pipe(jade({
             pretty: true,
             locals: data,
-        }))
+        })).on('error', console.log)
         .pipe(posthtml([
             require('posthtml-bem')({
                 elemPrefix: '__',
@@ -112,13 +112,12 @@ gulp.task('jade', () => {
             })
         ]))
         .pipe(prettify({indent_size: 4}))
-        .on('error', console.log)
         .pipe(gulp.dest('./app/'))
         .on('end', browserSync.reload)
 })
 
 gulp.task('bootstrap', () => {
-    return gulp.src(['./assets/scss/**/bootstrap.scss'])
+    return gulp.src(['./assets/bootstrap/**/bootstrap.scss'])
 
         .pipe(sass({
             includePaths: ['assets/bower/bootstrap-sass/assets/stylesheets/']
@@ -149,22 +148,6 @@ gulp.task('babel', () => {
         }))
         .pipe(gulp.dest('./app/js/'))
         .on('end', browserSync.reload)
-})
-
-gulp.task('deploy', () => {
-    var conn = ftp.create( {
-        host: 'ftp44.hostland.ru',
-        user: 'host1339720_test',
-        password: '8242332812',
-        parallel: 1
-    } );
-
-    var globs = ['app/**'];
-
-    return gulp.src(globs, {
-        base: './app',
-        buffer: false
-    }).pipe(conn.dest('/'));
 })
 
 gulp.task('copyMiscFiles', () => {
@@ -204,22 +187,11 @@ gulp.task('static', () => {
     runSequence('copyMiscFiles', 'copyFontFiles', 'buildBowerCSS', 'buildBowerJS', 'copyLibsFiles');
 })
 
-gulp.task('watch', () => {
-    gulp.watch('assets/scss/**/*.scss', ['scss']);
-    gulp.watch('assets/components/**/*.scss', ['scss']);
-
-    gulp.watch('assets/babel/**/*.js', ['babel']);
-    gulp.watch('assets/images/**', ['imagemin']);
-
-    gulp.watch('assets/components/**/*.jade', ['jade']);
-    gulp.watch('assets/pages/**/*.jade', ['jade']);
-    gulp.watch('assets/json/**/*.json', ['jade']);
-
-    gulp.watch('assets/misc/**', ['static']);
-    gulp.watch('assets/libs/**', ['static']);
-    gulp.watch('assets/font/**', ['static']);
-})
-
-gulp.task('default', () =>{
-    runSequence('browserSync', 'watch');
+gulp.task('default', ['browserSync'], () => {
+    watch(['assets/components/**/*.scss', 'assets/scss/**/*.scss'], () => {gulp.start('scss')});
+    watch(['assets/bootstrap/**/*.scss'], () => {gulp.start('bootstrap')});
+    watch(['assets/components/**/*.jade', 'assets/pages/**/*.jade', 'assets/data/**/*.json'], () => {gulp.start('jade')});
+    watch(['assets/misc/**', 'assets/libs/**', 'assets/font/**'], () => {gulp.start('static')});
+    watch(['assets/images/**'], () => {gulp.start('imagemin')});
+    watch(['assets/babel/**/*.js'], () => {gulp.start('babel')});
 })

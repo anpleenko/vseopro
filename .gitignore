@@ -33,6 +33,7 @@ Thumbs.db
 bower_components
 app/
 assets/bower
+.publish
 
 # Node.JS
 node_modules
