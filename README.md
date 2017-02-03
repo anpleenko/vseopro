@@ -1,6 +1,6 @@
 # vseopro
 
-URL для теста [ссылка](http://test.vseopro.ru/)
+URL для теста [ссылка](http://vaeum.com/vseopro/)
 
 [![Build Status](https://travis-ci.org/vaeum/vseopro.svg?branch=master)](https://travis-ci.org/vaeum/vseopro)
 
