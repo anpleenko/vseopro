@@ -6,7 +6,11 @@ node_js:
 env:
   global:
     - GH_REF: github.com/vaeum/vseopro.git
-    - secure: PYWOXitnE9+LLUKy5GcW8zcYa/dvYl453GIUYE8SxJSobkTIaAywY8ZMA+McrtRaiGMIIa3aQ++KEdy8+yOcqqR3HTYZ0bjw05rmBrLyMbdkLe37pmqxSVqVqs8novwBpGh7TNST5L9MLFVhjzflbPS6+XDI3nnghsvQzX2DrLG+43ryieRV7LxLGpGXnrOeWUYdkq0oVQNqhhAoncyd+9riNcRWSqSjTA36vxIBEdxOnN2K8b4m27GrgZxcORitdontFhxBurYsBXPU8sjBVAYgASmyFavm3EBnV3zbbc6Fm4K+uLT29yY7CKNmVORcRbkBTL+cg7Aj3QLls819LlRZX7GIX6FxPrqmHcGnwMAi6Dz3lLzXS1PN2BV7+s2y7DSUAZjERt2tRLVhTVLXW2CbEWcIhP0HbHg3x42CIplAGporRKcO/zfBT1pysui1M05vqURR2eEcsdPVYslg6TWLBaek5p15e3g8swOqI6CxNboZ1+x2NwNs7rIF9o1hNal7cVHaZk/pRxxBP6SthM2O7PjPIUNaPKWFGO177NPd/Ve2JBVtsMY3F/0d714QUw6o5GG4AdT1GkSzPyIVhKXL4oQBwzK089Ry0a34WAWSF0N4zdoo3JSVGgUPiBewn1YtNJ+676PfJIULmHK2jqVrRK1Biyv0DpscS76myas=
+    - secure: JV9dBJlhUxfhggFHZ1IvhIAiNr/9W9Y1PcYDcW2ayC3v7m4EPimIn5CrBV94sZvxfub20MQKXxsbLTTFY2GOUVg9TIyguyyHNzZEFeigIjOJF35YmAZ+CgITC6pBGf2uwjDzbZouwD9erQf5z1mzjxLn4dpDjumlfu0io1Ri45wG32SjZdJfV6oaFOHf8SHQdcC9P/bNV+3lHdzNrfPtrJO0g/aq+5MqCUSJiaJfT5px8ZjW/zk40QWtVoydhQJmbJhE04zme0etx+vt9S5G0Q7mEItO64J3IsdPJFXMFWLiUv29Jm/mxsGNzA4YSLcd7h5F9h4j7JPccJ0rA6PoiXBotBwxQCXedg2jJX9cmEX0qogR0uHyVRjy5ZdeNN445jPkQX5uNjCYBNRc9nHDBOz8ouT8KZ/FHKgZbGsk8I9F2ZXNQnwl66YAJ/wS+MGdFfFDxL20lMSevOXy2XdnzHVYdyrQ46Ua34QPpX4Nc/op09M24T04bxz8tED2Ge+Bt/ehnDkbPIBsomBYtpIvB4LkArGix7+Wq6hnhxaMl89HrJ5RTWqzE8BiX7nPwYpLxT22RmVbvDdo8Ir91tIzgpESmtZPTmE6RqYsMDbexQmmRpaJN5IuRK1n9ruNbI+ib6MgNgaDITmfPm4pEuYLUaEGRR+z7tO1qIM7KG/7P2k=
+
+before_install:
+- npm config set depth 0
+- npm install -g babel-cli
 
 before_script:
   - npm install -g bower
@@ -22,5 +26,5 @@ script:
   - git config user.email "vaeum@yahoo.com"
   - git add .
   - git commit -m "Deploy to GitHub Pages"
-  - git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
 
