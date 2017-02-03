@@ -7,3 +7,21 @@ URL для теста [ссылка](http://test.vseopro.ru/)
 Portal SEO optimizers vseopro.ru
 
 [Cсылка на иконочный шрифт](http://app.fontastic.me)
+
+### Перед запуском проекта
+
+Устанавливаем зависимости
+
+```
+bower install
+```
+
+```
+npm install
+```
+
+### Запускаем проект
+
+```
+make start
+```
