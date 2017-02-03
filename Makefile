@@ -1,14 +1,14 @@
 run:
-	gulp
+	./node_modules/.bin/gulp
 
 build:
 	rm -rf app
-	gulp bootstrap
-	gulp scss
-	gulp imagemin
-	gulp babel
-	gulp jade
-	gulp static
+	./node_modules/.bin/gulp bootstrap
+	./node_modules/.bin/gulp scss
+	./node_modules/.bin/gulp imagemin
+	./node_modules/.bin/gulp babel
+	./node_modules/.bin/gulp jade
+	./node_modules/.bin/gulp static
 
 start:
 	make build
