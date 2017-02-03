@@ -11,12 +11,11 @@
     "url": "https://github.com/vseopro/vseopro"
   },
   "scripts": {
-    "prebuild": "rm -rf app",
-    "build": "gulp bootstrap && gulp scss && gulp imagemin && gulp babel && gulp jade && gulp static",
-    "start": "gulp"
+    "build": "make build",
+    "start": "make"
   },
   "author": "vaeum",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.3.5",
     "babel-core": "^6.7.4",

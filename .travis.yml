@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - 0.12
+  - 6
 
 env:
   global:
@@ -15,7 +15,7 @@ before_script:
   - npm install
 
 script:
-  - npm run build
+  - make build
   - cd app
   - git init
   - git config user.name "Alexander Anpleenko"
