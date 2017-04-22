@@ -2,13 +2,10 @@ run:
 	./node_modules/.bin/gulp
 
 build:
-	rm -rf app
-	./node_modules/.bin/gulp bootstrap
-	./node_modules/.bin/gulp scss
-	./node_modules/.bin/gulp imagemin
-	./node_modules/.bin/gulp babel
-	./node_modules/.bin/gulp jade
-	./node_modules/.bin/gulp static
+	./node_modules/.bin/gulp build
+
+buildProd:
+	NODE_ENV=production ./node_modules/.bin/gulp build
 
 start:
 	make build
