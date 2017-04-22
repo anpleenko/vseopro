@@ -16,17 +16,17 @@ div(block="white-block")
           .row(elem="row-table")
             .col-md-6(elem="col-table")
               div(block="tab-grand-news")
-                img(src="https://unsplash.it/330/180/?random" alt="tab news image" elem="img").img-responsive
-                h2(elem="title").text-bold.db: a(href="#" elem="link").dark-blue-link #{text[Math.floor(Math.random() * ((text.length-1) - 0 + 1)) + 0]}
+                img(src="#{randomImage(330, 180)}" alt="tab news image" elem="img").img-responsive
+                h2(elem="title").text-bold.db: a(href="#" elem="link").dark-blue-link #{randomText()}
                 include ../news-metadata/_news-metadata
-                span(elem="description").db #{text[Math.floor(Math.random() * ((text.length-1) - 0 + 1)) + 0]}
+                span(elem="description").db #{randomText()}
                 a(href="#" role="button" elem="button").btn.btn-orange.db Читать подробнее
             .col-md-6(elem="col-table")
               -for(var e = 0; e < 3; e++)
                 div(block="tab-mini-news")
                   .row(elem="row")
                     .col-md-6(elem="col")
-                      img(src="https://unsplash.it/150/80/?random" alt="tab news image" elem="img").img-responsive
+                      img(src="#{randomImage(150, 80)}" alt="tab news image" elem="img").img-responsive
                     .col-md-6(elem="col")
-                      h3(elem="description"): a(href="#" elem="link").dark-blue-link.text-bold #{text[Math.floor(Math.random() * ((text.length-1) - 0 + 1)) + 0]}
+                      h3(elem="description"): a(href="#" elem="link").dark-blue-link.text-bold #{randomText()}
                   include ../news-metadata/_news-metadata

@@ -11,9 +11,9 @@ div(block="comment-meta").clearfix
       a(href="#" elem="link") #{time[Math.floor(Math.random() * ((time.length - 1) - 0 + 1)) + 0]}
     li(elem="item").dib
       span(elem="icon").icon-comment
-      a(href="#" elem="link") #{Math.floor(Math.random() * (15 - 1300) + 1300)}
+      a(href="#" elem="link") #{randomInt(1300, 15)}
     li(elem="item").dib
       span(elem="icon").icon-bookmark
-      a(href="#" elem="link") Новостей: #{Math.floor(Math.random() * (15 - 1300) + 1300)}
+      a(href="#" elem="link") Новостей: #{randomInt(1300, 15)}
 
   include ../admin-edit/_admin-edit

@@ -4,9 +4,9 @@ div(block="white-block")
     -for(var i = 0; i < 10; i++)
       .media(elem="media")
         .media-left(elem="media-left")
-          img(src="https://unsplash.it/75/?random" alt="popular news image" elem="image")
+          img(src="#{randomImage(75, 75)}" alt="popular news image" elem="image")
         .media-right(elem="media-right")
-          a(href="#" elem="title").db #{text[Math.floor(Math.random() * ((text.length-1) - 0 + 1)) + 0]}
+          a(href="#" elem="title").db #{randomText()}
           .row(elem="metadata")
             .col-xs-6(elem="col")
               a(href="#" elem="user").link.text-overflow
