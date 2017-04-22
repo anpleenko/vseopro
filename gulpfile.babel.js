@@ -9,17 +9,6 @@ import fs             from 'fs';
 import perfectionist  from 'perfectionist';
 import browserSync    from 'browser-sync';
 
-// import jade           from 'gulp-jade';
-// import prettify       from 'gulp-prettify';
-// import posthtml       from 'gulp-posthtml';
-// import sass           from 'gulp-sass';
-// import csso           from 'gulp-csso';
-// import postcss        from 'gulp-postcss';
-// import bulkSass       from 'gulp-sass-glob-import';
-// import babel          from 'gulp-babel';
-// import uglify         from 'gulp-uglify';
-// import imagemin       from 'gulp-imagemin';
-
 import gulpLoadPlugins from 'gulp-load-plugins';
 const $ = gulpLoadPlugins({});
 
