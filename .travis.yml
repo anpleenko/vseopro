@@ -10,12 +10,11 @@ env:
 
 before_install:
   - npm config set depth 0
-  - npm install -g babel-cli
+  # - npm install -g babel-cli
   - npm install -g bower
   - npm install -g gulp
 
 before_script:
-  - bower install
 
 script:
   - make build
