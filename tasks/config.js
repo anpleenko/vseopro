@@ -28,7 +28,7 @@ export const errorHandler = $.notify.onError({
 
 export const config = {
   src: {
-    style: './assets/scss/**/style.scss',
+    style: './assets/style/**/style.scss',
     jade: './assets/pages/!(_)*.jade',
     layouts: './assets/pages/*.jade',
     components: './assets/components/**/*.jade',
@@ -88,7 +88,10 @@ export const config = {
     require('postcss-discard-comments')({ removeAll: true }),
     require('postcss-custom-selectors'),
     require('postcss-focus-hover'),
-    require('postcss-pxtorem'),
+    require('postcss-pxtorem')({
+      root_value: 14,
+      selector_black_list: ['html']
+    }),
   ],
 
   PROCESSORS_PERFECTIONIST: [

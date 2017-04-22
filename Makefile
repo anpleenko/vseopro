@@ -8,5 +8,5 @@ buildProd:
 	NODE_ENV=production ./node_modules/.bin/gulp build
 
 start:
-	make build
-	make
+	./node_modules/.bin/gulp build
+	./node_modules/.bin/gulp

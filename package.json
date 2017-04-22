@@ -11,9 +11,8 @@
     "url": "https://github.com/vseopro/vseopro"
   },
   "scripts": {
-    "postinstall": "bower install",
-    "build": "make build",
-    "start": "make"
+    "build": "./node_modules/.bin/gulp build",
+    "start": "./node_modules/.bin/gulp"
   },
   "author": "vaeum",
   "license": "MIT",
