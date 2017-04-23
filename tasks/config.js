@@ -30,7 +30,7 @@ export const config = {
   src: {
     style: './assets/style/**/style.scss',
     jade: './assets/pages/!(_)*.jade',
-    layouts: './assets/pages/*.jade',
+    layouts: './assets/layouts/*.jade',
     components: './assets/components/**/*.jade',
     dataJson: './assets/json/data.json',
     scripts: './assets/scripts/main.js',

@@ -1,7 +1,8 @@
 - function randomInt(max, min) { return Math.floor(Math.random() * (max - min + 1)) + min; };
-//- // - function randomImage(width, height) { return 'https://unsplash.it/'+ width +'/'+ height +'/?random=' + randomInt(1000, 1); };
-- function randomImage(width, height) { return 'http://loremflickr.com/'+ width +'/'+ height +'/green,red/?random=' + randomInt(1000, 1); };
-//- // - function randomImage(width, height) { return 'http://pipsum.com/'+ width +'x'+ height +'.jpg'; };
+if DEV
+  - function randomImage(width, height) { return 'http://placehold.it/'+ width +'x'+ height; };
+if PROD
+  - function randomImage(width, height) { return 'http://loremflickr.com/'+ width +'/'+ height +'/green,red/?random=' + randomInt(1000, 1); };
 - function randomText() { return text[randomInt(text.length-1, 0)]; };
 - function randomTag() { return tags[randomInt(tags.length-1, 0)]; };
 
