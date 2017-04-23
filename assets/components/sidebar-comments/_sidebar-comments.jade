@@ -6,7 +6,7 @@ div(block="white-block")
         .media-left(elem="media-left")
           img(src="#{randomImage(80, 80)}" alt="img sidebar comment avatar" elem="avatar").img-responsive
         .media-right(elem="media-right")
-          span(elem="autor").db.text-overflow <strong elem="bold">Написал(а):</strong> <a href="#" class="link" elem="link">#{users[Math.floor(Math.random() * ((users.length - 1) - 0 + 1)) + 0]}</a>
-          span(elem="time").db <strong elem="bold">Дата:</strong> Вчера в #{time[Math.floor(Math.random() * ((time.length - 1) - 0 + 1)) + 0]}
-          span(elem="comment").db <strong elem="bold">К новости:</strong> <span class="cur" data-toggle="tooltip" data-placement="top" title="Дная затоплен служба Яндекс. ываыдвшао, Рефераты предназначена ываыва ываыва ываыва ываываварв ываыва затоплен служба затоплен служба">#{randomText()}</span>
+          span(elem="autor").db.text-overflow <strong elem="bold">Написал(а):</strong> <a href="#" class="link" elem="link">#{randomUser()}</a>
+          span(elem="time").db <strong elem="bold">Дата:</strong> Вчера в #{randomDate()}
+          span(elem="comment").db <strong elem="bold">К новости:</strong> <span class="cur" data-toggle="tooltip" data-placement="top" title="#{randomText()}">#{randomText()}</span>
 

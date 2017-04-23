@@ -10,14 +10,14 @@
                 img(src="#{randomImage(60, 60)}" alt="user avatar" elem="avatar").img-responsive
                 span(elem="text").db сейчас
                   span(elem="status" class="#{ i % 2 == 0 ? 'off' : ''}") #{ i % 2 == 0 ? 'OFF' : 'ON'}
-                span(elem="text").db.text-overflow Ник #{users[Math.floor(Math.random() * ((users.length-1) - 0 + 1)) + 0]}
+                span(elem="text").db.text-overflow Ник #{randomUser()}
                 span(elem="text").db Пользователи
-                span(elem="text").db Был в 0#{Math.floor(Math.random() * (9 - 1 + 1)) + 1}:0#{Math.floor(Math.random() * (9 - 1 + 1)) + 1}
+                span(elem="text").db Был в 0#{randomInt(9, 1)}:0#{randomInt(9, 1)}
 
     .col-xs-12.col-sm-6.col-md-6.col-lg-6
       .clearfix(block="footer-tags")
         p(elem="title").text-white <span class="icon-tag"></span> Теги сайта
         -for(var i = 0; i < 50; i++)
-          a(href="#" elem="item").db #{tags[Math.floor(Math.random() * ((tags.length - 1) - 0 + 1)) + 0]}
+          a(href="#" elem="item").db #{randomTag()}
       .show-all-tags
         a(href="").btn.btn-orange Показать все теги

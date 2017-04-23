@@ -1,7 +1,7 @@
 .row-mini(block="metadata")
   .col-sm-4.col-md-4(elem="col")
-    a(href="#" elem="text").link.text-overflow <span class="icon-user" elem="ico"></span> #{users[Math.floor(Math.random() * ((users.length-1) - 0 + 1)) + 0]}
+    a(href="#" elem="text").link.text-overflow <span class="icon-user" elem="ico"></span> #{randomUser()}
   .col-sm-4.col-md-4(elem="col")
-    a(href="#" elem="text").link.text-overflow <span class="icon-calendar" elem="ico"></span> #{time[Math.floor(Math.random() * ((time.length - 1) - 0 + 1)) + 0]}
+    a(href="#" elem="text").link.text-overflow <span class="icon-calendar" elem="ico"></span> #{randomDate()}
   .col-sm-4.col-md-4(elem="col")
-    a(href="#" data-toggle="tooltip" data-placement="top" title="Тестовый текст" elem="text").link.text-overflow <span class="icon-folder-open" elem="ico"></span> #{tags[Math.floor(Math.random() * ((tags.length - 1) - 0 + 1)) + 0]}
+    a(href="#" data-toggle="tooltip" data-placement="top" title="Тестовый текст" elem="text").link.text-overflow <span class="icon-folder-open" elem="ico"></span> #{randomTag()}

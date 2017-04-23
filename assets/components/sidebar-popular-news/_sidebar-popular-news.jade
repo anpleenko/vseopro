@@ -11,8 +11,8 @@ div(block="white-block")
             .col-xs-6(elem="col")
               a(href="#" elem="user").link.text-overflow
                 span.icon-user(elem="ico")
-                | #{users[Math.floor(Math.random() * ((users.length-1) - 0 + 1)) + 0]}
+                | #{randomUser()}
             .col-xs-6(elem="col")
               a(href="#" elem="time").link.text-overflow
                 span.icon-calendar(elem="ico")
-                | #{time[Math.floor(Math.random() * ((time.length - 1) - 0 + 1)) + 0]}
+                | #{randomDate()}

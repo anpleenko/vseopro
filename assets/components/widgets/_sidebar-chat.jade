@@ -8,11 +8,11 @@
             img(src="img/img_sidebar_comment_avatar.jpg" alt="img sidebar comment avatar").sidebar-comments__avatar
           .col-xs-8.media-right.media-middle.fn
             if dev
-              span.db.sidebar-comments__autor <strong>Написал(а):</strong> <a href="#" class="link sidebar-comments__link">#{users[Math.floor(Math.random() * ((users.length-1) - 0 + 1)) + 0]}</a>
+              span.db.sidebar-comments__autor <strong>Написал(а):</strong> <a href="#" class="link sidebar-comments__link">#{randomUser()}</a>
             else
               span.db.sidebar-comments__autor <strong>Написал(а):</strong> <a href="#" class="link sidebar-comments__link">admin</a>
             if dev
-              span.db.sidebar-comments__time <strong>Дата:</strong> Вчера в #{time[Math.floor(Math.random() * ((time.length - 1) - 0 + 1)) + 0]}
+              span.db.sidebar-comments__time <strong>Дата:</strong> Вчера в #{randomDate()}
             else
               span.db.sidebar-comments__time <strong>Дата:</strong> 23.18.1200
         .sidebar-chat__message

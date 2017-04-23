@@ -5,10 +5,10 @@ div(block="comment-meta").clearfix
   ul(elem="list").lsn.pl0.mb0
     li(elem="item").dib
       span(elem="icon").icon-user
-      a(href="#" elem="link") #{users[Math.floor(Math.random() * ((users.length-1) - 0 + 1)) + 0]}
+      a(href="#" elem="link") #{randomUser()}
     li(elem="item").dib
       span(elem="icon").icon-calendar
-      a(href="#" elem="link") #{time[Math.floor(Math.random() * ((time.length - 1) - 0 + 1)) + 0]}
+      a(href="#" elem="link") #{randomDate()}
     li(elem="item").dib
       span(elem="icon").icon-comment
       a(href="#" elem="link") #{randomInt(1300, 15)}
