@@ -6,13 +6,13 @@ div(block="white-block")
         .media-left(elem="media-left")
           img(src="#{randomImage(75, 75)}" alt="popular news image" elem="image")
         .media-right(elem="media-right")
-          a(href="#" elem="title").db #{randomText()}
+          a(href="#" elem="title").db #{getRandomText()}
           .row(elem="metadata")
             .col-xs-6(elem="col")
               a(href="#" elem="user").link.text-overflow
                 span.icon-user(elem="ico")
-                | #{randomUser()}
+                | #{getUserName()}
             .col-xs-6(elem="col")
               a(href="#" elem="time").link.text-overflow
                 span.icon-calendar(elem="ico")
-                | #{randomDate()}
+                | #{getRandomDate()}

@@ -4,7 +4,7 @@ div(block="news-important")
       img(src="#{randomImage(328, 258)}" alt="tab news image" elem="img").img-responsive
     .col-md-6(elem="col")
       h2.text-bold(elem="title")
-        a(href="#" elem="link").db.dark-blue-link #{randomText()}
+        a(href="#" elem="link").db.dark-blue-link #{getRandomText()}
       include ../news-metadata/_news-metadata
-      p(elem="description") #{randomText()}
+      p(elem="description") #{getRandomText()}
       a(href="#" role="button" elem="button").btn.btn-orange.db Читать подробнее

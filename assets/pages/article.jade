@@ -24,7 +24,7 @@ block content
             -for(var i = 0; i < 5; i++)
               div(elem="item")
                 include ../components/comment-meta/_comment-meta
-                span(elem="text") #{text[Math.floor(Math.random() * ((text.length-1) - 0 + 1)) + 0]}
+                span(elem="text") #{getRandomText()}
 
         a(href="#").btn.btn-orange.btn-getMoreComments.table-center Показать предыдущие комментарии
 

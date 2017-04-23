@@ -32,7 +32,7 @@ export const config = {
     jade: './assets/pages/!(_)*.jade',
     layouts: './assets/layouts/*.jade',
     components: './assets/components/**/*.jade',
-    dataJson: './assets/json/data.json',
+    data: './assets/data/**/*.js',
     scripts: './assets/scripts/main.js',
     images: [
       './assets/images/**',

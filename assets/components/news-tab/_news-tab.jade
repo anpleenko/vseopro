@@ -17,9 +17,9 @@ div(block="white-block")
             .col-md-6(elem="col-table")
               div(block="tab-grand-news")
                 img(src="#{randomImage(330, 180)}" alt="tab news image" elem="img").img-responsive
-                h2(elem="title").text-bold.db: a(href="#" elem="link").dark-blue-link #{randomText()}
+                h2(elem="title").text-bold.db: a(href="#" elem="link").dark-blue-link #{getRandomText()}
                 include ../news-metadata/_news-metadata
-                span(elem="description").db #{randomText()}
+                span(elem="description").db #{getRandomText()}
                 a(href="#" role="button" elem="button").btn.btn-orange.db Читать подробнее
             .col-md-6(elem="col-table")
               -for(var e = 0; e < 3; e++)
@@ -28,5 +28,5 @@ div(block="white-block")
                     .col-md-6(elem="col")
                       img(src="#{randomImage(150, 80)}" alt="tab news image" elem="img").img-responsive
                     .col-md-6(elem="col")
-                      h3(elem="description"): a(href="#" elem="link").dark-blue-link.text-bold #{randomText()}
+                      h3(elem="description"): a(href="#" elem="link").dark-blue-link.text-bold #{getRandomText()}
                   include ../news-metadata/_news-metadata

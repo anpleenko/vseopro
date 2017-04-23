@@ -4,24 +4,24 @@
     -for(var i = 0; i < 3; i++)
       .forums-answer__item
         a(href="#" data-toggle="tooltip" data-placement="top" title="Тестовый текст").forums-answer__title.dark-blue-link.h2.text-overflow
-          | ${randomText()}
+          | ${getRandomText()}
         .row-mini
           .col-md-3
-            a(href="#").link.text-overflow.forums-answer__text <span class="icon-user forums-answer__ico"></span> #{randomUser()}
+            a(href="#").link.text-overflow.forums-answer__text <span class="icon-user forums-answer__ico"></span> #{getUserName()}
           .col-md-3
-            a(href="#").link.text-overflow.forums-answer__text <span class="icon-calendar forums-answer__ico"></span> #{randomDate()}
+            a(href="#").link.text-overflow.forums-answer__text <span class="icon-calendar forums-answer__ico"></span> #{getRandomDate()}
           .col-md-6
             a(href="#" data-toggle="tooltip" data-placement="top" title="Тестовый текст").link.text-overflow.forums-answer__text <span class="icon-comment-1 forums-answer__ico"></span>
-            | #{randomText()}
+            | #{getRandomText()}
 
   .forums-answer__footer
     .row-mini
       .col-md-3
         span.forums-answer__footer__text Кол-во тем:
-          span.forums-answer__footer__count #{randomInt(1300, 15)}
+          span.forums-answer__footer__count #{getRandomInt(1300, 15)}
       .col-md-4
         span.forums-answer__footer__text Кол-во сообщений:
-          span.forums-answer__footer__count #{randomInt(1300, 15)}
+          span.forums-answer__footer__count #{getRandomInt(1300, 15)}
       .col-md-5
         span.forums-answer__footer__text Кол-во пользователей:
-          span.forums-answer__footer__count #{randomInt(1300, 15)}
+          span.forums-answer__footer__count #{getRandomInt(1300, 15)}

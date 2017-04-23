@@ -6,7 +6,7 @@ div(block="news-last")
           img(src="#{randomImage(209, 165)}" alt="last news img" elem="img").img-responsive
         .col-md-8(elem="col")
           h2(elem="title").text-bold.db
-            a(href="#").dark-blue-link.db #{randomText()}
+            a(href="#").dark-blue-link.db #{getRandomText()}
           include ../news-metadata/_news-metadata
-          p(elem="text") #{randomText()}
+          p(elem="text") #{getRandomText()}
           //- a(href="#" elem="read-more").link Читать далее...

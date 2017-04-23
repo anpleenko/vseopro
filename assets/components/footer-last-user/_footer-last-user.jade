@@ -9,15 +9,16 @@
               .pr(elem="item")
                 img(src="#{randomImage(60, 60)}" alt="user avatar" elem="avatar").img-responsive
                 span(elem="text").db сейчас
-                  span(elem="status" class="#{ i % 2 == 0 ? 'off' : ''}") #{ i % 2 == 0 ? 'OFF' : 'ON'}
-                span(elem="text").db.text-overflow Ник #{randomUser()}
+                  - var www = getRandomBool()
+                  span(elem="status" class="#{ www ? 'off' : ''}") #{ www ? 'OFF' : 'ON'}
+                span(elem="text").db.text-overflow Ник #{getUserName()}
                 span(elem="text").db Пользователи
-                span(elem="text").db Был в 0#{randomInt(9, 1)}:0#{randomInt(9, 1)}
+                span(elem="text").db Был в #{getRandomDate()}
 
     .col-xs-12.col-sm-6.col-md-6.col-lg-6
       .clearfix(block="footer-tags")
         p(elem="title").text-white <span class="icon-tag"></span> Теги сайта
         -for(var i = 0; i < 50; i++)
-          a(href="#" elem="item").db #{randomTag()}
+          a(href="#" elem="item").db #{getWord()}
       .show-all-tags
         a(href="").btn.btn-orange Показать все теги

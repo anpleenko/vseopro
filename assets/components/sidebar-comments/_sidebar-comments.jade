@@ -6,7 +6,7 @@ div(block="white-block")
         .media-left(elem="media-left")
           img(src="#{randomImage(80, 80)}" alt="img sidebar comment avatar" elem="avatar").img-responsive
         .media-right(elem="media-right")
-          span(elem="autor").db.text-overflow <strong elem="bold">Написал(а):</strong> <a href="#" class="link" elem="link">#{randomUser()}</a>
-          span(elem="time").db <strong elem="bold">Дата:</strong> Вчера в #{randomDate()}
-          span(elem="comment").db <strong elem="bold">К новости:</strong> <span class="cur" data-toggle="tooltip" data-placement="top" title="#{randomText()}">#{randomText()}</span>
+          span(elem="autor").db.text-overflow <strong elem="bold">Написал(а):</strong> <a href="#" class="link" elem="link">#{getUserName()}</a>
+          span(elem="time").db <strong elem="bold">Дата:</strong> Вчера в #{getRandomDate()}
+          span(elem="comment").db <strong elem="bold">К новости:</strong> <span class="cur" data-toggle="tooltip" data-placement="top" title="#{getRandomText()}">#{getRandomText()}</span>
 
