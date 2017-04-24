@@ -1,5 +1,5 @@
 import faker from 'faker';
-const capitalizeFirstChar = string => string.charAt(0).toUpperCase() + string.substring(1);
+import { capitalizeFirstChar } from '../../tasks/config';
 
 const data = {
   sidebarVoteAnswers: [
