@@ -1,12 +1,10 @@
 // import fs from 'fs';
 import gulp from 'gulp';
-import Chance from 'chance';
 import moment from 'moment';
-import data from '../assets/data';
 import faker from 'faker';
+import data from '../assets/data';
 import { config, $, bs, errorHandler, isDev, isProd } from './config';
 
-const chance = new Chance();
 moment.locale('ru');
 
 // Если с английского на русский, то передаём вторым параметром true.
@@ -29,23 +27,23 @@ function getRandomText() {
 }
 
 function getWord() {
-  return capitalizeFirstChar(chance.word({ syllables: 3 }));
+  return capitalizeFirstChar(faker.lorem.word());
 }
 
 function getUserName() {
-  return chance.first();
+  return faker.name.firstName();
 }
 
 function getRandomInt(max, min) {
-  return chance.integer({ min, max });
+  return faker.random.number({ min, max });
 }
 
 function getRandomDate() {
-  return moment(chance.date()).format('L');
+  return moment(faker.date.past()).format('L');
 }
 
 function getRandomBool() {
-  return chance.bool();
+  return faker.random.boolean();
 }
 
 gulp.task('jade', () => {
