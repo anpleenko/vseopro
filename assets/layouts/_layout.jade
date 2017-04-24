@@ -1,7 +1,8 @@
 if DEV
   - function randomImage(width, height) { return 'http://placehold.it/'+ width +'x'+ height; };
+
 if PROD
-  - function randomImage(width, height) { return 'http://loremflickr.com/'+ width +'/'+ height +'/green,red/?random=' + randomInt(1000, 1); };
+  - function randomImage(width, height) { return 'http://loremflickr.com/'+ width +'/'+ height +'/green,red/?random=' + getRandomInt(1000, 1); };
 
 doctype html
 //- html(lang="ru").open-right-mobile-menu
