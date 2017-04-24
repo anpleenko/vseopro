@@ -1,3 +1,5 @@
+-var slug = [getRandomSlug(), getRandomSlug(), getRandomSlug(), getRandomSlug(), getRandomSlug()]
+
 div(block="white-block")
   h4(elem="title") <span class="icon-bookmark"></span> Последнее из Datalife Engine
 
@@ -7,12 +9,12 @@ div(block="white-block")
     ul.nav.nav-tabs(role='tablist' elem="nav")
       each val, i in newsTab
         li(role='presentation' class="#{(val.active)?('active'):('')}" elem="nav-item")
-          a(href='##{val.blob}#{i}', aria-controls='#{val.blob}#{i}', role='tab', data-toggle='tab' elem="nav-link") #{val.name}
+          a(href='##{slug[i]}', aria-controls='#{val.blob}#{i}', role='tab', data-toggle='tab' elem="nav-link") #{val.name}
 
     // Tab panes
     .tab-content(elem="content")
       each val, i in newsTab
-        div(role='tabpanel' id="#{val.blob}#{i}" class="tab-pane #{(val.active)?('active'):('fade')}" elem="panel")
+        div(role='tabpanel' id="#{slug[i]}" class="tab-pane #{(val.active)?('active'):('fade')}" elem="panel")
           .row(elem="row-table")
             .col-md-6(elem="col-table")
               div(block="tab-grand-news")

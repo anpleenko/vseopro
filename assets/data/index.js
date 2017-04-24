@@ -19,11 +19,11 @@ const data = {
     { text: 'Совсем не понравился', vote: 154, persent: 100 },
   ],
   newsTab: [
-    { name: 'Шаблоны', active: true, blob: 'tab-teplate' },
-    { name: 'Модули', active: false, blob: 'tab-modules' },
-    { name: 'Хаки', active: false, blob: 'tab-hacks' },
-    { name: 'Форумы', active: false, blob: 'tab-forums' },
-    { name: 'Релизы', active: false, blob: 'tab-relize' },
+    { name: 'Шаблоны', active: true },
+    { name: 'Модули', active: false },
+    { name: 'Хаки', active: false },
+    { name: 'Форумы', active: false },
+    { name: 'Релизы', active: false },
   ],
   navMenu: [],
   footerSocialWidgetData: [
