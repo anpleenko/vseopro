@@ -19,6 +19,6 @@
       .clearfix(block="footer-tags")
         p(elem="title").text-white <span class="icon-tag"></span> Теги сайта
         -for(var i = 0; i < 50; i++)
-          a(href="#" elem="item").db #{getWord()}
+          a(href="#" elem="item").db #{getRandomWord()}
       .show-all-tags
         a(href="").btn.btn-orange Показать все теги

@@ -22,45 +22,36 @@ const transliterate = (text, engToRus) => {
 
 const capitalizeFirstChar = string => string.charAt(0).toUpperCase() + string.substring(1);
 
-function getRandomText() {
-  return transliterate(faker.lorem.paragraph(), true);
-}
-
-function getWord() {
-  return capitalizeFirstChar(faker.lorem.word());
-}
-
-function getUserName() {
-  return faker.name.firstName();
-}
-
-function getRandomInt(max, min) {
-  return faker.random.number({ min, max });
-}
-
-function getRandomDate() {
-  return moment(faker.date.past()).format('L');
-}
-
-function getRandomBool() {
-  return faker.random.boolean();
-}
+const randomFuncs = {
+  getRandomText() {
+    return transliterate(faker.lorem.paragraph(), true);
+  },
+  getRandomWord() {
+    return capitalizeFirstChar(faker.random.word());
+  },
+  getUserName() {
+    return faker.name.firstName();
+  },
+  getRandomInt(max, min) {
+    return faker.random.number({ min, max });
+  },
+  getRandomDate() {
+    return moment(faker.date.past()).format('L');
+  },
+  getRandomBool() {
+    return faker.random.boolean();
+  },
+};
 
 gulp.task('jade', () => {
   return gulp.src([config.src.jade])
     .pipe($.jade({
-      locals: Object.assign(
-        {},
-        data,
-        { DEV: isDev },
-        { PROD: isProd },
-        { getWord },
-        { getRandomInt },
-        { getUserName },
-        { getRandomDate },
-        { getRandomBool },
-        { getRandomText },
-      ),
+      locals: {
+        ...data,
+        DEV: isDev,
+        PROD: isProd,
+        ...randomFuncs,
+      },
     }))
       .on('error', errorHandler)
 

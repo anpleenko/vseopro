@@ -1,5 +1,4 @@
-import Chance from 'chance';
-const chance = new Chance();
+import faker from 'faker';
 const capitalizeFirstChar = string => string.charAt(0).toUpperCase() + string.substring(1);
 
 const data = {
@@ -38,9 +37,9 @@ const data = {
 function generateThreeLevel() {
   let arr = [];
 
-  for(let i = 0; i < chance.integer({ min: 3, max: 10 }); i++) {
+  for(let i = 0; i < faker.random.number({ min: 3, max: 10 }); i++) {
     arr.push({
-      text: capitalizeFirstChar(chance.word({ syllables: 4 })),
+      text: capitalizeFirstChar(faker.random.word()),
       url: '#',
     });
   }
@@ -51,15 +50,15 @@ function generateThreeLevel() {
 function generateTwoLevel() {
   let arr = [];
 
-  for(let i = 0; i < chance.integer({ min: 3, max: 10 }); i++) {
-    if (chance.bool()) {
+  for(let i = 0; i < faker.random.number({ min: 3, max: 10 }); i++) {
+    if (faker.random.boolean()) {
       arr.push({
-        text: capitalizeFirstChar(chance.word({ syllables: 4 })),
+        text: capitalizeFirstChar(faker.random.word()),
         url: '#',
       });
     } else {
       arr.push({
-        text: capitalizeFirstChar(chance.word({ syllables: 4 })),
+        text: capitalizeFirstChar(faker.random.word()),
         url: '#',
         submenu: generateThreeLevel(),
       });
@@ -70,15 +69,15 @@ function generateTwoLevel() {
 }
 
 
-for(var i = 0; i < chance.integer({ min: 2, max: 8 }); i++) {
-  if (chance.bool()) {
+for(var i = 0; i < faker.random.number({ min: 2, max: 8 }); i++) {
+  if (faker.random.boolean()) {
     data.navMenu.push({
-      text: capitalizeFirstChar(chance.word({ syllables: 4 })),
+      text: capitalizeFirstChar(faker.random.word()),
       url: '#',
     });
   } else {
     data.navMenu.push({
-      text: capitalizeFirstChar(chance.word({ syllables: 4 })),
+      text: capitalizeFirstChar(faker.random.word()),
       url: '#',
       submenu: generateTwoLevel(),
     });
