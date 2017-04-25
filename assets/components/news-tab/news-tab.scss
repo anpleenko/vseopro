@@ -80,7 +80,9 @@
     }
   }
   &__button{
-    padding: 14px 0;
+    // padding: 14px 0;
+    padding-top: 14px;
+    padding-bottom: 14px;
     position: absolute;
     left: 15px;
     right: 15px;
