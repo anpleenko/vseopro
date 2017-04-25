@@ -1,13 +1,13 @@
 .pagination{
   margin-top: 0px + $base-margin;
-  margin-bottom: 0px + $base-margin;
+  // margin-bottom: 0px + $base-margin;
   // margin-bottom: 3px;
   min-height: 40px;
   @media(max-width: 768px){
     text-align: center;
   }
   &.mb0{
-    margin-bottom: 0 !important;
+    // margin-bottom: 0 !important;
   }
   &__prev-button,
   &__next-button{
