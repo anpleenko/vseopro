@@ -35,7 +35,7 @@ export const config = {
     layouts: './assets/layouts/*.jade',
     components: './assets/components/**/*.jade',
     data: './assets/data/**/*.js',
-    scripts: './assets/scripts/main.js',
+    scripts: './assets/scripts/!(_)*.js',
     images: [
       './assets/images/**',
       './assets/components/**/*.png',
