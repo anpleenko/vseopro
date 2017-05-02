@@ -1,5 +1,5 @@
 import faker from 'faker';
-import { capitalizeFirstChar } from '../../tasks/config';
+import { capitalizeFirstChar, arrGen } from '../../tasks/config';
 
 const data = {
   sidebarVoteAnswers: [
@@ -37,12 +37,12 @@ const data = {
 function generateThreeLevel() {
   let arr = [];
 
-  for(let i = 0; i < faker.random.number({ min: 3, max: 10 }); i++) {
+  arrGen(faker.random.number({ min: 3, max: 10 })).map((e, i) => {
     arr.push({
       text: capitalizeFirstChar(faker.random.word()),
       url: '#',
     });
-  }
+  })
 
   return arr;
 }
@@ -50,7 +50,7 @@ function generateThreeLevel() {
 function generateTwoLevel() {
   let arr = [];
 
-  for(let i = 0; i < faker.random.number({ min: 3, max: 10 }); i++) {
+  arrGen(faker.random.number({ min: 3, max: 10 })).map((e, i) => {
     if (faker.random.boolean()) {
       arr.push({
         text: capitalizeFirstChar(faker.random.word()),
@@ -63,13 +63,13 @@ function generateTwoLevel() {
         submenu: generateThreeLevel(),
       });
     }
-  }
+  })
 
   return arr;
 }
 
 
-for(var i = 0; i < faker.random.number({ min: 2, max: 8 }); i++) {
+arrGen(faker.random.number({ min: 4, max: 8 })).map((e, i) => {
   if (faker.random.boolean()) {
     data.navMenu.push({
       text: capitalizeFirstChar(faker.random.word()),
@@ -82,6 +82,6 @@ for(var i = 0; i < faker.random.number({ min: 2, max: 8 }); i++) {
       submenu: generateTwoLevel(),
     });
   }
-}
+})
 
 export default data;

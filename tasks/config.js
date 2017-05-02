@@ -38,9 +38,7 @@ export const config = {
     scripts: './assets/scripts/!(_)*.js',
     images: [
       './assets/images/**',
-      './assets/components/**/*.png',
-      './assets/components/**/*.jpg',
-      './assets/components/**/*.svg',
+      './assets/components/**/*.{png,jpg,svg}',
     ],
     misc: './assets/misc/**',
   },
@@ -92,7 +90,7 @@ export const config = {
     require('postcss-focus-hover'),
     require('postcss-pxtorem')({
       root_value: 14,
-      selector_black_list: ['html']
+      selector_black_list: ['html'],
     }),
   ],
 
@@ -116,4 +114,10 @@ export const transliterate = (text = '', engToRus = false) => {
   });
 
   return text;
+};
+
+export const arrGen = (n, data) => {
+  const a = Array(n);
+  while (n -= 1) a[n] = data ? data : n;
+  return a;
 };
