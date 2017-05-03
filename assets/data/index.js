@@ -35,22 +35,22 @@ const data = {
 };
 
 function generateThreeLevel() {
-  let arr = [];
+  const arr = [];
 
-  arrGen(faker.random.number({ min: 3, max: 10 })).map((e, i) => {
+  arrGen(faker.random.number({ min: 3, max: 10 })).map(() => {
     arr.push({
       text: capitalizeFirstChar(faker.random.word()),
       url: '#',
     });
-  })
+  });
 
   return arr;
 }
 
 function generateTwoLevel() {
-  let arr = [];
+  const arr = [];
 
-  arrGen(faker.random.number({ min: 3, max: 10 })).map((e, i) => {
+  arrGen(faker.random.number({ min: 3, max: 10 })).map(() => {
     if (faker.random.boolean()) {
       arr.push({
         text: capitalizeFirstChar(faker.random.word()),
@@ -63,13 +63,13 @@ function generateTwoLevel() {
         submenu: generateThreeLevel(),
       });
     }
-  })
+  });
 
   return arr;
 }
 
 
-arrGen(faker.random.number({ min: 4, max: 8 })).map((e, i) => {
+arrGen(faker.random.number({ min: 4, max: 8 })).map(() => {
   if (faker.random.boolean()) {
     data.navMenu.push({
       text: capitalizeFirstChar(faker.random.word()),
@@ -82,6 +82,6 @@ arrGen(faker.random.number({ min: 4, max: 8 })).map((e, i) => {
       submenu: generateTwoLevel(),
     });
   }
-})
+});
 
 export default data;

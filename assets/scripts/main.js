@@ -5,5 +5,4 @@ $(() => {
   //= include _hideShowPassword.js
   //= include _mega-menu.js
   //= include _mobile-menu.js
-  //= include _variables.js
 });
