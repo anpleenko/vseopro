@@ -12,7 +12,9 @@
   },
   "scripts": {
     "build": "./node_modules/.bin/gulp build",
-    "start": "./node_modules/.bin/gulp"
+    "start": "./node_modules/.bin/gulp",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "vaeum",
   "license": "MIT",
@@ -34,7 +36,7 @@
     "eslint-plugin-react": "^6.10.3",
     "faker": "^4.1.0",
     "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-add-src": "^0.2.0",
+    "gulp-add-src": "^1.0.0",
     "gulp-babel": "^6.1.1",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^3.0.0",
@@ -62,6 +64,8 @@
     "postcss-pxtorem": "^4.0.0",
     "posthtml-bem": "^0.2.2",
     "require-dir": "^0.3.1",
-    "sass": "^0.5.0"
-  }
+    "sass": "^0.5.0",
+    "snyk": "^1.104.2"
+  },
+  "snyk": true
 }
